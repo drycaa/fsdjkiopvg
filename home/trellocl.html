@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="trellocl.css">
+    <title>Gerenciador - Tela Principal</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+<div id="containerpai">
+    <nav>
+        <img src="Vector.png" class="logo">
+        <ul>
+            <li><a href="A" class="Inicio"><ion-icon name="tablet-portrait-outline"></ion-icon> Boards</a></li>
+            <li><a href="A" class="equipe"><ion-icon name="people-outline"></ion-icon> Equipes</a></li>
+            <li><a href="A" class="Relatório"><ion-icon name="newspaper-outline"></ion-icon> Relatórios</a></li>
+            <li><a href="A" class="ajuste"><ion-icon name="settings-outline"></ion-icon> Ajustes</a></li>
+        </ul>
+        
+    </nav>
+
+    <main>
+        <div class="pgprincipal">
+            <section class="p-perfil">
+                <h1>Meu Kanban <img src="pincel.svg"></h1>
+                <img src="perfil.png" alt="">
+            </section>
+            
+            <section class="filtro">
+                <button><ion-icon name="filter-outline"></ion-icon> <span>Filtrar</span></button>
+                <div class="input-wrapper">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Busque por cards, assuntos ou responsáveis...">
+                </div>
+            </section>
+
+            <div class="boards">
+                <div class="board">
+                    <h3>To do</h3>
+                    <div class="dropzone">
+                        <div class="card" draggable="true">
+                            <div class="status green"></div>
+                            <div class="content"> scedule for this week!</div>
+                                <!-- btn pra add os card -->
+                                <div class="cards_list"></div>
+                                <button class="add_btn" onclick="openModal(4)">
+                                  <span class="material-icons">add</span>
+                                  Another card
+                                </button>
+                                
+                        </div>
+                    </div>
+                </div>
+                <div class="board">
+                    <h3>In progress</h3>
+                    <div class="dropzone">
+                        <div class="card" draggable="true">
+                            <div class="status blue"></div>
+                            <div class="content"> Uptadate for a new logo for our Website!</div>
+                                <!-- btn pra add os card -->
+                            <div class="cards_list"></div>
+                            <button class="add_btn" onclick="openModal(4)">
+                              <span class="material-icons">add</span>
+                              Another card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="board">
+                    <h3>Done</h3>
+                    <div class="dropzone">
+                        <div class="card" draggable="true">
+                            <div class="status red"></div>
+                            <div class="content"> Pweb its almost done...</div>
+                              <!-- btn pra add os card -->
+                            <div class="cards_list"></div>
+                            <button class="add_btn" onclick="openModal(4)">
+                              <span class="material-icons">add</span>
+                              Another card
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div id="modal">
+                        <div class="box">
+                          <div class="head">
+                            <span id="creationModeTitle">Nova tarefa</span>
+                            <span id="editingModeTitle">Editar tarefa</span>
+                            <button class="material-icons" onclick="closeModal()">
+                              close
+                            </button>
+                          </div>
+                    
+                          <div class="form">
+                            <input type="hidden" id="idInput">
+                    
+                            <div class="form-group">
+                              <label for="description">Descrição</label>
+                              <textarea id="description" rows="3"></textarea>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="priority">Prioridade</label>
+                              <select id="priority">
+                                <option>Baixa</option>
+                                <option>Média</option>
+                                <option>Alta</option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="column">Coluna</label>
+                              <select id="column">
+                                <option value="1">A Fazer</option>
+                                <option value="2">Em progresso</option>
+                                <option value="3">Finalizado</option>
+                                <option value="4">Arquivado</option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="">Prazo</label>
+                              <input type="date" id="deadline">
+                            </div>
+                    
+                </div>
+            </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+  <script src="trellocl.js"></script>
+
+</body>
+</html>
